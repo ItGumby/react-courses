@@ -6,6 +6,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `npx babel-node server.js`
+
+to run express server for server-side rendering
+
+Open http://localhost:3001 to view it in browser.
+
 ### `npm start`
 
 Runs the app in the development mode.\
