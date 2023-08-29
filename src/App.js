@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Articles } from './pages/Articles';
@@ -16,11 +16,14 @@ function App() {
           <li><Link to="/articles">Articles</Link></li>
         </ul>
       </nav>
-      <Switch>
-        <Route path="/" exact><Home /></Route>
-        <Route path="/about"><About /></Route>
-        <Route path="/articles"><Articles /></Route>
-      </Switch>
+      {/* <Switch> deprecated for <Routes>
+        https://stackoverflow.com/questions/69843615/switch-is-not-exported-from-react-router-dom
+      */}
+      <Routes>
+        <Route path="/" exact element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/articles" element={<Articles />} />
+      </Routes>
     </BrowserRouter>
   );
 }
