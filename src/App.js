@@ -4,6 +4,8 @@ import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Articles } from './pages/Articles';
 import { CounterButton } from './components/CounterButton';
+import { CounterProvider } from './components/CounterProvider';
+import { SharedCounterButton } from './components/SharedCounterButton';
 
 //import './App.css';  // some problem with the CSS import
 
@@ -27,6 +29,16 @@ function App() {
         <Route path="/articles" element={<Articles />} />
       </Routes>
       <CounterButton />
+
+      <hr />
+      <CounterProvider>
+        <h2>Shared State Mgmt via Context</h2>
+        <span>my shared context</span>
+        <SharedCounterButton />
+        <p>and again...</p>
+        <SharedCounterButton />
+      </CounterProvider>
+
     </>
   );
 }
