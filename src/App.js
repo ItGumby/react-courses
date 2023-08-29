@@ -3,6 +3,8 @@ import { Routes, Route, Link } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Articles } from './pages/Articles';
+import { CounterButton } from './components/CounterButton';
+
 //import './App.css';  // some problem with the CSS import
 
 /* <Switch> deprecated for <Routes>
@@ -24,6 +26,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/articles" element={<Articles />} />
       </Routes>
+      <CounterButton />
     </>
   );
 }
