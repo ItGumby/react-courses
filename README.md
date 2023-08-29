@@ -12,6 +12,10 @@ to run express server for server-side rendering
 
 Open http://localhost:3001 to view it in browser.
 
+#### `npx nodemon --exec npx babel-node server.js`
+
+enhancement of previous to auto-restart on changes
+
 ### `npm start`
 
 Runs the app in the development mode.\
