@@ -3,7 +3,7 @@ import { Routes, Route, Link } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Articles } from './pages/Articles';
-import './App.css';
+//import './App.css';  // some problem with the CSS import
 
 /* <Switch> deprecated for <Routes>
   https://stackoverflow.com/questions/69843615/switch-is-not-exported-from-react-router-dom
