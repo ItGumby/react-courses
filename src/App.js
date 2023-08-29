@@ -7,6 +7,9 @@ import { CounterButton } from './components/CounterButton';
 import { CounterProvider } from './components/CounterProvider';
 import { SharedCounterButton } from './components/SharedCounterButton';
 
+import { Provider } from 'react-redux';
+import { store } from './store';
+import { ReduxCounter } from './components/ReduxCounter';
 //import './App.css';  // some problem with the CSS import
 
 /* <Switch> deprecated for <Routes>
@@ -38,6 +41,12 @@ function App() {
         <p>and again...</p>
         <SharedCounterButton />
       </CounterProvider>
+
+      <hr />
+      <Provider store={store}>
+        <h2>State Mgmt via Redux</h2>
+        <ReduxCounter />
+      </Provider>
 
     </>
   );
