@@ -20,7 +20,7 @@ export const ReduxCounter = () => {
           type="number" />
       </label>
       <button
-        onClick={() => dispatch(counterButtonClicked)}
+        onClick={() => dispatch(counterButtonClicked(incrementBy))}
       >Increment</button>
     </>
   );

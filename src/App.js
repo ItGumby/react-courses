@@ -46,6 +46,8 @@ function App() {
       <Provider store={store}>
         <h2>State Mgmt via Redux</h2>
         <ReduxCounter />
+        <p>and again ...</p>
+        <ReduxCounter />
       </Provider>
 
     </>
