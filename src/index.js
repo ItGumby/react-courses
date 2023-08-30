@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { InitialDataContext } from './initialDataContext';
 
 /* change of responsibility, extracted BrowserRouter from App.js to index.js
   also, change ReactDOM.render(...) to ReactDOM.hydrate
@@ -16,9 +17,11 @@ import reportWebVitals from './reportWebVitals';
 
 const APP_JSX = (
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <InitialDataContext.Provider value={(window && window.preloadedData) || {_data: {} }}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </InitialDataContext.Provider>
   </React.StrictMode>);
 const root = createRoot(document.querySelector('#root'));
 root.render(APP_JSX);

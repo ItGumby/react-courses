@@ -1,24 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useDataSSR } from '../useDataSSR';
+
 
 export const Articles = () => {
-  // if SSR preloaded articles, use that as default
-  const [articles, setArticles] = useState(window && window.preloadedArticles);
-  console.debug(`articles initialized to ${articles}`);
-
-  // initial load of data from "api"; not called by SSR
-  useEffect(() => {
-    console.info('Articles.useEffect...');
-    if (window && !window.preloadedArticles) {
-      console.debug('fetching articles.... (none pre-loaded)');
+  // useDataSSR replaces useState, useEffect
+  const articles = useDataSSR('articles', () => {
       //const getReq = 'http://localhost:3001/api/articles';  // CORS error
-      const getReq = '/api/articles'
-      fetch(getReq)
-        .then( response => response.json())
-        .then( data => setArticles(data))
-        .catch( err => { console.error(`fetch ${getReq} failed...`); });
-    }
-    // console.debug(`loaded ${articles.length} articles`);
-  }, []);
+      const getReq = 'http://localhost:3001/api/articles'; // isomorphic fetch requires full URL
+
+      return fetch(getReq).then( response => response.json())
+  });
 
   return (
     <>
