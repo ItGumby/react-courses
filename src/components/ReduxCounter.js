@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getNumberOfClicks } from '../selectors';
 import { counterButtonClicked } from '../actions';
