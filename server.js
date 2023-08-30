@@ -14,6 +14,16 @@ const app = express();
 // leverage output folder for static serving
 app.use(express.static('./build', { index: false }));
 
+const articles = [
+  { title: 'Alpha', author: 'Apple', content: 'lorem ipsum delorem est...'},
+  { title: 'Bravo', author: 'Bat', content: 'lorem ipsum delorem est...'},
+  { title: 'Charlie', author: 'Cat', content: 'lorem ipsum delorem est...'},
+];
+app.get('/api/articles', (request, response) => {
+  const data = articles;  // pretend to be DB lookup
+  response.json(data);
+});
+
 app.get('/*', (request, response) => {
 
   console.dir({'app': App, 'static': StaticRouter});
