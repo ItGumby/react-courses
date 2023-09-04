@@ -1,6 +1,8 @@
 import React from "react";
 
 // https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary
+  // NOTE: in dev/localhost will see big stack traces but prod will be "caught"
+
 export default class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props);
